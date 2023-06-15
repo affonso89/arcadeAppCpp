@@ -9,9 +9,9 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-#include "Color.h"
-#include "Screen.h"
-#include "Line2D.h"
+#include "Graphics/Color.h"
+#include "Graphics/Screen.h"
+#include "Shapes/Line2D.h"
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
@@ -19,7 +19,7 @@ const int MAGNIFICATION = 3;
 
 using namespace std;
 
-int main(int argc, const char * argv[])
+int main(int argc, char * argv[])
 {
 	Screen theScreen;
 

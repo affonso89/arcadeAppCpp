@@ -7,9 +7,9 @@
 
 
 #include "Screen.h"
-#include "Vec2D.h"
-#include "Line2D.h"
-#include "Utils.h"
+#include "../Utils/Vec2D.h"
+#include "../Shapes/Line2D.h"
+#include "../Utils/Utils.h"
 #include <SDL2/SDL.h>
 #include <cassert>
 #include <cmath>

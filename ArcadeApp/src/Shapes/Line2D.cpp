@@ -7,7 +7,7 @@
 
 #include "Line2D.h"
 #include <cmath>
-#include "Utils.h"
+#include "../Utils/Utils.h"
 
 Line2D::Line2D():Line2D(Vec2D::Zero, Vec2D::Zero)
 {
