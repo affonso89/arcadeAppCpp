@@ -19,4 +19,6 @@ bool isGreaterThanOrEqual(float x, float y);
 
 bool isLessThanOrEqual(float x, float y);
 
+float MillisecondsToSeconds(unsigned int milliseconds);
+
 #endif /* UTILS_UTILS_H_ */
