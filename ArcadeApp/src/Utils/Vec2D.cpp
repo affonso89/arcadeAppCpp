@@ -41,7 +41,8 @@ Vec2D Vec2D::operator*(float scale) const {
 Vec2D Vec2D::operator/(float scale) const {
 	assert(fabsf(scale) > EPSILON);
 
-	return Vec2D(scale / mX, scale / mY);
+	//return Vec2D(scale / mX, scale / mY);
+	return Vec2D(mX / scale, mY / scale);
 }
 
 Vec2D& Vec2D::operator*=(float scale) {
