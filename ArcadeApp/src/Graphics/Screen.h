@@ -12,6 +12,7 @@
 #include "ScreenBuffer.h"
 #include "Color.h"
 #include <vector>
+#include <string>
 
 class Vec2D;
 class Line2D;
@@ -20,6 +21,10 @@ class AARectangle;
 class Circle;
 struct SDL_Window;
 struct SDL_Surface;
+class BMPImage;
+class SpriteSheet;
+struct Sprite;
+class BitmapFont;
 
 class Screen
 {
@@ -41,6 +46,10 @@ public:
 	void Draw(const Triangle& triangle, const Color& color, bool fill = false, const Color& fillColor = Color::White());
 	void Draw(const AARectangle& rect, const Color& color, bool fill = false, const Color& fillColor = Color::White());
 	void Draw(const Circle& circle, const Color& color, bool fill = false, const Color& fillColor = Color::White());
+
+	void Draw(const BMPImage image, const Sprite& sprite, const Vec2D& pos, const Color& overlayColor = Color::White());
+	void Draw(const SpriteSheet& ss, const std::string& spriteName, const Vec2D& pos, const Color& overlayColor = Color::White());
+	void Draw(const BitmapFont& font, const std::string& textLine, const Vec2D& pos, const Color& overlayColor = Color::White());
 
 private:
 

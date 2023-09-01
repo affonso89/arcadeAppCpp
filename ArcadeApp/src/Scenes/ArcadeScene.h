@@ -33,6 +33,7 @@ public:
 
 private:
 	std::unique_ptr<Scene> GetSCene(eGame game);
+
 };
 
 

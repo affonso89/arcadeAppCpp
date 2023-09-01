@@ -21,6 +21,12 @@ App& App::Singleton()
 
 bool App::Init(uint32_t width, uint32_t height, uint32_t mag)
 {
+	if(!mFont.Load("ArcadeFont"))
+	{
+		std::cout << "Could not load arcade font!" <<std::endl;
+		return false;
+	}
+
 	mnoptrWindow = mScreen.Init(width, height, mag);
 
 	std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
@@ -28,13 +34,13 @@ bool App::Init(uint32_t width, uint32_t height, uint32_t mag)
 	PushScene(std::move(arcadeScene));
 
 	//temporary
-	{
-		std::unique_ptr<BreakOut> breakoutGame = std::make_unique<BreakOut>();
-
-		std::unique_ptr<GameScene> breakoutScene = std::make_unique<GameScene>(std::move(breakoutGame));
-
-		PushScene(std::move(breakoutScene));
-	}
+//	{
+//		std::unique_ptr<BreakOut> breakoutGame = std::make_unique<BreakOut>();
+//
+//		std::unique_ptr<GameScene> breakoutScene = std::make_unique<GameScene>(std::move(breakoutGame));
+//
+//		PushScene(std::move(breakoutScene));
+//	}
 
 	return mnoptrWindow != nullptr;
 }
