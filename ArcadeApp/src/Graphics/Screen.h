@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include "ScreenBuffer.h"
 #include "Color.h"
+#include <functional>
 #include <vector>
 #include <string>
 
@@ -26,13 +27,17 @@ class SpriteSheet;
 struct Sprite;
 class BitmapFont;
 
+struct SDL_Renderer;
+struct SDL_PixelFormat;
+struct SDL_Texture;
+
 class Screen
 {
 public:
 	Screen();
 	~Screen();
 
-	SDL_Window* Init(uint32_t w, uint32_t h, uint32_t mag);
+	SDL_Window* Init(uint32_t w, uint32_t h, uint32_t mag, bool fast = true);
 	void SwapScreens();
 
 	inline void SetClearColor(const Color& clearColor) {mClearColor = clearColor;}
@@ -57,7 +62,10 @@ private:
 	Screen& operator=(const Screen& screen);
 
 	void ClearScreen();
-	void FillPoly(const std::vector<Vec2D>& points, const Color& color);
+
+	using FillPolyFunc = std::function<Color (uint32_t x, uint32_t t)>;
+
+	void FillPoly(const std::vector<Vec2D>& points, FillPolyFunc func);
 	uint32_t mWidth;
 	uint32_t mHeight;
 
@@ -66,6 +74,11 @@ private:
 
 	SDL_Window* moptrWindow;
 	SDL_Surface* mnoptrWindowSurface;
+
+	SDL_Renderer* mRenderer;
+	SDL_PixelFormat* mPixelFormat;
+	SDL_Texture* mTexture;
+	bool mFast;
 };
 
 
