@@ -16,7 +16,7 @@
 #include "../Input/InputController.h"
 #include "../Graphics/BitmapFont.h"
 
-struct SDL_Window;
+struct SDL_Window; //
 
 class App
 {

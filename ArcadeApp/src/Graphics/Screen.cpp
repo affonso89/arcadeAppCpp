@@ -20,6 +20,7 @@
 #include <cassert>
 #include <cmath>
 #include <algorithm>
+#include <cstring>
 
 Screen::Screen(): mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr),mRenderer(nullptr), mPixelFormat(nullptr), mTexture(nullptr)
 {
