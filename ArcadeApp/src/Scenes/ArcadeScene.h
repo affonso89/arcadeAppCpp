@@ -8,7 +8,7 @@
 #ifndef SCENES_ARCADESCENE_H_
 #define SCENES_ARCADESCENE_H_
 
-#include "Scene.h"
+#include "ButtonOptionScene.h".h"
 #include <memory>
 
 enum eGame
@@ -22,7 +22,7 @@ enum eGame
 
 class Screen;
 
-class ArcadeScene: public Scene
+class ArcadeScene: public ButtonOptionsScene
 {
 public:
 	ArcadeScene();

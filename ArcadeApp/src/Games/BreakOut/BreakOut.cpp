@@ -119,6 +119,21 @@ void BreakOut::Init(GameController& controller)
 	};
 
 	controller.AddInputAtionForKey(rightKeyAction);
+
+	ButtonAction backAction;
+	backAction.key = GameController::CancelKey();
+	backAction.action = [this](uint32_t dt, InputState state)
+		{
+			if(mGameState == IN_SERVE || mGameState == IN_GAME_OVER)
+			{
+				if(GameController::IsPressed(state))
+				{
+					App::Singleton().PopScrenn();
+				}
+			}
+		};
+
+	controller.AddInputAtionForKey(backAction);
 }
 
 void BreakOut::Update(uint32_t dt)
