@@ -9,7 +9,6 @@
 #define SCENES_ARCADESCENE_H_
 
 #include "ButtonOptionScene.h"
-#include "../Graphics/AnimationPlayer.h"
 #include <memory>
 
 enum eGame
@@ -35,9 +34,6 @@ public:
 private:
 	std::unique_ptr<Scene> GetSCene(eGame game);
 
-	//temp
-	AnimationPlayer mAnimationPlayer;
-	SpriteSheet mSpriteSheet;
 };
 
 

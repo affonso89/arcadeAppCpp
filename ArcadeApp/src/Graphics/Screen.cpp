@@ -97,7 +97,7 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag, bool fast)
 		}
 
 		//mPixelFormat = SDL_AllocFormat(SDL_GetWindowPixelFormat(moptrWindow));
-		mPixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
+		mPixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_ARGB8888);
 
 		if(mFast)
 		{
