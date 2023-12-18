@@ -26,7 +26,7 @@ InputAction GameController::GetActionForKey(InputKey key)
 	return [](uint32_t, InputState){};
 }
 
-void GameController::AddInputAtionForKey(const ButtonAction& buttonAction)
+void GameController::AddInputActionForKey(const ButtonAction& buttonAction)
 {
 	mButtonActions.push_back(buttonAction);
 }

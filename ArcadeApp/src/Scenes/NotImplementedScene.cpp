@@ -23,7 +23,7 @@ void NotImplementedScene::Init()
 			}
 		};
 
-	mGameController.AddInputAtionForKey(backAction);
+	mGameController.AddInputActionForKey(backAction);
 }
 
 void NotImplementedScene::Update(uint32_t dt)

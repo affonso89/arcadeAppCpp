@@ -21,21 +21,17 @@ bool Excluder::HasCollided(const AARectangle& rect, BoundaryEdge& edge) const
 {
 	if(mAARect.Interscts(rect))
 	{
-		float yMin = mAARect.GetTopLeftPoint().GetY() >= (rect.GetTopLeftPoint().GetY())
-				? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
-		float yMax = mAARect.GetBottomRightPoint().GetY() <= rect.GetBottomRightPoint().GetY()
-				? mAARect.GetBottomRightPoint().GetY() : rect.GetBottomRightPoint().GetY();
+		float yMin = mAARect.GetTopLeftPoint().GetY() >= (rect.GetTopLeftPoint().GetY()) ? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
+		float yMax = mAARect.GetBottomRightPoint().GetY() <= rect.GetBottomRightPoint().GetY() ? mAARect.GetBottomRightPoint().GetY() : rect.GetBottomRightPoint().GetY();
 
 		float ySize = yMax - yMin;
 
-		float xMin = mAARect.GetTopLeftPoint().GetX() >= rect.GetTopLeftPoint().GetX()
-				? mAARect.GetTopLeftPoint().GetX() : rect.GetTopLeftPoint().GetX();
-		float xMax = mAARect.GetBottomRightPoint().GetX() >= rect.GetBottomRightPoint().GetX()
-				? mAARect.GetBottomRightPoint().GetX() : rect.GetBottomRightPoint().GetX();
+		float xMin = mAARect.GetTopLeftPoint().GetX() >= rect.GetTopLeftPoint().GetX() ? mAARect.GetTopLeftPoint().GetX() : rect.GetTopLeftPoint().GetX();
+		float xMax = mAARect.GetBottomRightPoint().GetX() <= rect.GetBottomRightPoint().GetX() ? mAARect.GetBottomRightPoint().GetX() : rect.GetBottomRightPoint().GetX();
 
 		float xSize = xMax - xMin;
 
-		if(xSize > ySize) //collided top or bottom
+		if(xSize > ySize)
 		{
 			if(rect.GetCenterPoint().GetY() > mAARect.GetCenterPoint().GetY())
 			{
@@ -46,7 +42,7 @@ bool Excluder::HasCollided(const AARectangle& rect, BoundaryEdge& edge) const
 				edge = mEdges[TOP_EDGE];
 			}
 		}
-		else //collided left or right
+		else
 		{
 			if(rect.GetCenterPoint().GetX() < mAARect.GetCenterPoint().GetX())
 			{
@@ -71,25 +67,21 @@ Vec2D Excluder::GetCollisionOffset(const AARectangle& rect) const
 
 	if(HasCollided(rect, edge))
 	{
-		float yMin = mAARect.GetTopLeftPoint().GetY() >= (rect.GetTopLeftPoint().GetY())
-				? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
-		float yMax = mAARect.GetBottomRightPoint().GetY() <= rect.GetBottomRightPoint().GetY()
-				? mAARect.GetBottomRightPoint().GetY() : rect.GetBottomRightPoint().GetY();
+		float yMin = mAARect.GetTopLeftPoint().GetY() >= (rect.GetTopLeftPoint().GetY()) ? mAARect.GetTopLeftPoint().GetY() : rect.GetTopLeftPoint().GetY();
+		float yMax = mAARect.GetBottomRightPoint().GetY() <= rect.GetBottomRightPoint().GetY() ? mAARect.GetBottomRightPoint().GetY() : rect.GetBottomRightPoint().GetY();
 
 		float ySize = yMax - yMin;
 
-		float xMin = mAARect.GetTopLeftPoint().GetX() >= rect.GetTopLeftPoint().GetX()
-				? mAARect.GetTopLeftPoint().GetX() : rect.GetTopLeftPoint().GetX();
-		float xMax = mAARect.GetBottomRightPoint().GetX() >= rect.GetBottomRightPoint().GetX()
-				? mAARect.GetBottomRightPoint().GetX() : rect.GetBottomRightPoint().GetX();
+		float xMin = mAARect.GetTopLeftPoint().GetX() >= rect.GetTopLeftPoint().GetX() ? mAARect.GetTopLeftPoint().GetX() : rect.GetTopLeftPoint().GetX();
+		float xMax = mAARect.GetBottomRightPoint().GetX() <= rect.GetBottomRightPoint().GetX() ? mAARect.GetBottomRightPoint().GetX() : rect.GetBottomRightPoint().GetX();
 
 		float xSize = xMax - xMin;
 
-		if(!IsEqual(edge.normal.GetY(), 0)) //is a Y
+		if(!IsEqual(edge.normal.GetY(), 0))
 		{
 			offset = (ySize + 1) * edge.normal;
 		}
-		else // is a X
+		else
 		{
 			offset = (xSize + 1) * edge.normal;
 		}

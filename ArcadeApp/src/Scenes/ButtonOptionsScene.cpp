@@ -39,7 +39,7 @@ void ButtonOptionsScene::Init()
 			}
 		};
 
-	mGameController.AddInputAtionForKey(upAction);
+	mGameController.AddInputActionForKey(upAction);
 
 	ButtonAction downAction;
 	downAction.key = GameController::DownKey();
@@ -51,7 +51,7 @@ void ButtonOptionsScene::Init()
 			}
 		};
 
-	mGameController.AddInputAtionForKey(downAction);
+	mGameController.AddInputActionForKey(downAction);
 
 	ButtonAction acceptAction;
 	acceptAction.key = GameController::ActionKey();
@@ -63,7 +63,7 @@ void ButtonOptionsScene::Init()
 			}
 		};
 
-	mGameController.AddInputAtionForKey(acceptAction);
+	mGameController.AddInputActionForKey(acceptAction);
 
 	uint32_t height = App::Singleton().Height();
 	uint32_t width = App::Singleton().Width();

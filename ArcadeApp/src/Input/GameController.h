@@ -16,7 +16,7 @@ class GameController
 public:
 	GameController();
 	InputAction GetActionForKey(InputKey key);
-	void AddInputAtionForKey(const ButtonAction& buttonAction);
+	void AddInputActionForKey(const ButtonAction& buttonAction);
 	void ClearAll();
 
 	static bool IsPressed(InputState state);

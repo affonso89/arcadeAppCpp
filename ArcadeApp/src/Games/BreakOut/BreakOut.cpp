@@ -81,7 +81,7 @@ void BreakOut::Init(GameController& controller)
 		}
 	};
 
-	controller.AddInputAtionForKey(serveAction);
+	controller.AddInputActionForKey(serveAction);
 
 	ButtonAction leftKeyAction;
 	leftKeyAction.key = GameController::LeftKey();
@@ -100,7 +100,7 @@ void BreakOut::Init(GameController& controller)
 		}
 	};
 
-	controller.AddInputAtionForKey(leftKeyAction);
+	controller.AddInputActionForKey(leftKeyAction);
 
 	ButtonAction rightKeyAction;
 	rightKeyAction.key = GameController::RightKey();
@@ -118,7 +118,7 @@ void BreakOut::Init(GameController& controller)
 		}
 	};
 
-	controller.AddInputAtionForKey(rightKeyAction);
+	controller.AddInputActionForKey(rightKeyAction);
 
 	ButtonAction backAction;
 	backAction.key = GameController::CancelKey();
@@ -133,7 +133,7 @@ void BreakOut::Init(GameController& controller)
 			}
 		};
 
-	controller.AddInputAtionForKey(backAction);
+	controller.AddInputActionForKey(backAction);
 }
 
 void BreakOut::Update(uint32_t dt)

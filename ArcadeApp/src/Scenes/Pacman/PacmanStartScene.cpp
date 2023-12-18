@@ -30,7 +30,7 @@ void PacmanStartScene::Init()
 			}
 		};
 
-	mGameController.AddInputAtionForKey(backAction);
+	mGameController.AddInputActionForKey(backAction);
 
 	std::vector<Button::ButtonAction> actions;
 
