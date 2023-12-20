@@ -12,6 +12,9 @@
 #include <vector>
 
 static const int PACMAN_MOVEMENT_SPEED = 50; //pixels per secont
+static const int GHOST_MOVEMENT_SPEED = 45;
+static const int GHOST_VULNERABLE_MOVEMENT_SPEED = 25;
+static const int GHOST_BACK_TO_PEN_SPEED = 100;
 
 enum PacmanMovement
 {
@@ -25,5 +28,6 @@ enum PacmanMovement
 Vec2D GetMovementVector(PacmanMovement direction);
 PacmanMovement GetOppositeDirection(PacmanMovement direction);
 std::vector<PacmanMovement> GetPerpendicularMovements(PacmanMovement direction);
+std::vector<PacmanMovement> GetOtherDirections(PacmanMovement direction);
 
 #endif /* GAMES_PACMAN_PACMANGAMEUTILS_H_ */
